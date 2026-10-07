@@ -1,0 +1,24 @@
+
+   64  clear
+   65  mkdir mi-app
+   66  cd mi-app/
+   67  touch README.md
+   68  touch .gitignore
+   69  mkdir docs
+   70  mkdir src
+   71  touch src/app.py
+   72  touch docs/idea.md
+   73  touch docs/estructura.txt
+   74  touch docs/historial.txt
+   75  echo -e "mi-app\nGastos personales, ayudara a controlar los gastos diarios como persona natural para tener un orden e historial de las compras\nDaniel Santiago Orjuela Rojas" > README.md 
+   76  git init
+   77  git checkout
+   78  git status
+   79  git add .
+   80  git commit -a -m "Agregue el contenido del readme"
+   81  git branch main
+   82  git switch main
+   83  echo "Las personas que tienen muchos gastos y se les dificulta tener control de esos gastos, los usuarios deberan ingresar la cantidad del gasto y su razon para tener un mejor control" > docs/idea.md 
+   84  echo "# Aquí empieza mi app" > src/app.py 
+   85  ls -R > docs/estructura.txt
+   86  history > docs/historial.txt

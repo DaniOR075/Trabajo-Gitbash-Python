@@ -1,24 +1,63 @@
-
-   64  clear
-   65  mkdir mi-app
-   66  cd mi-app/
-   67  touch README.md
-   68  touch .gitignore
-   69  mkdir docs
-   70  mkdir src
-   71  touch src/app.py
-   72  touch docs/idea.md
-   73  touch docs/estructura.txt
-   74  touch docs/historial.txt
-   75  echo -e "mi-app\nGastos personales, ayudara a controlar los gastos diarios como persona natural para tener un orden e historial de las compras\nDaniel Santiago Orjuela Rojas" > README.md 
-   76  git init
-   77  git checkout
-   78  git status
-   79  git add .
-   80  git commit -a -m "Agregue el contenido del readme"
-   81  git branch main
-   82  git switch main
-   83  echo "Las personas que tienen muchos gastos y se les dificulta tener control de esos gastos, los usuarios deberan ingresar la cantidad del gasto y su razon para tener un mejor control" > docs/idea.md 
-   84  echo "# Aquí empieza mi app" > src/app.py 
-   85  ls -R > docs/estructura.txt
-   86  history > docs/historial.txt
+    1  ls
+    2  cd visual
+    3  cd desktop
+    4  cd visual
+    5  ls
+    6  cd visual
+    7  cd zapatos
+    8  ls
+    9  cd zapatos
+   10  cd ejemplo_clase/
+   11  cd "C:\Users\AMD RYZEN\Desktop\visual"
+   12  cd Zapatos/
+   13  cd ejemplo_clase/
+   14  git config --list
+   15  git config --list
+   16  git config --list
+   17  cd desktop/Visual/Zapatos
+   18  cd desktop
+   19  cd Desktop
+   20  cd "C:\Users\AMD RYZEN\Desktop\visual"
+   21  cd desktop
+   22  cd desktop
+   23  cd visual
+   24  cd "C:\Users\AMD RYZEN\Desktop\visual"
+   25  cd desktop
+   26  ls
+   27  cd ..
+   28  ls
+   29  cd "C:\Users\AMD RYZEN\Desktop\visual"
+   30  cd "AMD RYZEN\Desktop\visual"
+   31  cd AMD RYZEN\Desktop\visual
+   32  cd ..
+   33  ls
+   34  cd ..
+   35  ls
+   36  cd ..
+   37  cd ..
+   38  ls
+   39  cd "C:\Users\AMD RYZEN\OneDrive\Desktop\visual"
+   40  cls
+   41  clear
+   42  ls
+   43  cd "C:\Users\AMD RYZEN\OneDrive\Desktop\visual"
+   44  cd ..
+   45  cd ...
+   46  cd ..
+   47  ls
+   48  cd AMD RYZEN\Desktop\visual
+   49  cd ..
+   50  cd ..
+   51  ls
+   52  cd ..
+   53  ls
+   54  cd AMD RYZEN\Desktop\visual
+   55  cd  C:\Users\AMD RYZEN\Desktop\visual
+   56  cd "C:\Users\AMD RYZEN\Desktop\visual"
+   57  cd Zapatos/
+   58  cd [200~~/Desktop/visual/Zapatos~
+   59  cd ~/Desktop/visual/Zapatos
+   60  cd CuentasClaras/
+   61  ls -R > docs/estructura.txt 
+   62  ls -R > docs/estructura.txt 
+   63  history > docs/historial.txt 

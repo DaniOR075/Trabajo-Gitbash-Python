@@ -1,5 +1,6 @@
 .:
 docs/
+ejercicios/
 README.md
 src/
 
@@ -7,6 +8,9 @@ src/
 estructura.txt
 historial.txt
 idea.md
+
+./ejercicios:
+tema-01.py
 
 ./src:
 app.py

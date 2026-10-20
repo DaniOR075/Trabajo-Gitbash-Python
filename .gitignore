@@ -1,2 +1,4 @@
-README.md
-./ejercicios/
+__pycache__/
+*.pyc
+.venv/
+.env

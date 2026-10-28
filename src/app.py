@@ -1,19 +1,14 @@
 # Aquí empieza mi app
+
 print("=================================================")
 print("               Cuentas Claras                    ")
-print("             Gestión de fiados")
-print("            Hoy se fia, mañana no")
+print("             Gestión de fiados                    ")
+print("            Hoy se fía, mañana no                 ")
 print("=================================================")
 
+print("¡Bienvenido a Cuentas Claras!")
 
-print("============== MENÚ PRINCIPAL ==============")
-print("=======  ¡Bienvenido a Cuentas Claras! =======")
-
-nombreCliente = ""
-valorCompraFiada = 0
-cantidadProductos = 0
-compraRegistrada = False
-
+comprasFiadas = []
 continuar = True
 
 while continuar:
@@ -21,7 +16,7 @@ while continuar:
     print()
     print("============== MENÚ PRINCIPAL ==============")
     print("1. Registrar compra fiada")
-    print("2. Consultar última compra")
+    print("2. Consultar compras registradas")
     print("3. Calcular cuotas")
     print("4. Salir")
     print("============================================")
@@ -34,14 +29,22 @@ while continuar:
         print("========= REGISTRAR COMPRA FIADA =========")
 
         nombreCliente = input("Nombre del cliente: ")
-        valorCompraFiada = int(input("¿Cuánto vale la compra fiada? $")
+        valorCompraFiada = int(
+            input("¿Cuánto vale la compra fiada? $")
         )
-        cantidadProductos = int(input("¿Cuántos productos lleva? ")
+        cantidadProductos = int(
+            input("¿Cuántos productos lleva? ")
         )
 
         if valorCompraFiada > 0 and cantidadProductos > 0:
 
-            compraRegistrada = True
+            compra = [
+                nombreCliente,
+                valorCompraFiada,
+                cantidadProductos
+            ]
+
+            comprasFiadas.append(compra)
 
             print()
             print("¡Compra fiada registrada correctamente!")
@@ -51,60 +54,93 @@ while continuar:
                 f"Valor de la compra: "
                 f"${valorCompraFiada:,}".replace(",", ".")
             )
+            print(f"Total de compras registradas: {len(comprasFiadas)}")
 
         else:
             print()
-            print("Error: los valores deben ser mayores que cero.")
+            print("Error: el valor y la cantidad deben ser mayores que cero.")
 
     elif opcion == "2":
 
         print()
+        print("========= COMPRAS REGISTRADAS =========")
 
-        if compraRegistrada:
+        if len(comprasFiadas) > 0:
 
-            print("========= ÚLTIMA COMPRA REGISTRADA =========")
-            print(f"Cliente: {nombreCliente}")
-            print(f"Cantidad de productos: {cantidadProductos}")
-            print(
-                f"Valor de la compra: "
-                f"${valorCompraFiada:,}".replace(",", ".")
-            )
+            for i in range(len(comprasFiadas)):
+
+                print()
+                print(f"Compra número {i + 1}")
+                print(f"Cliente: {comprasFiadas[i][0]}")
+                print(f"Cantidad de productos: {comprasFiadas[i][2]}")
+                print(
+                    f"Valor de la compra: "
+                    f"${comprasFiadas[i][1]:,}".replace(",", ".")
+                )
+                print("---------------------------------------")
+
+            print(f"Total de compras registradas: {len(comprasFiadas)}")
 
         else:
-            print("Todavía no has registrado ninguna compra.")
+            print("Todavía no hay compras registradas.")
 
     elif opcion == "3":
 
         print()
 
-        if compraRegistrada:
+        if len(comprasFiadas) > 0:
 
-            cantidadCuotas = int(input("¿En cuántas cuotas pagará el cliente? "))
+            print("========= SELECCIONAR COMPRA =========")
 
-            if cantidadCuotas > 0:
-
-                valorCuota = valorCompraFiada / cantidadCuotas
-
-                print()
-                print("============= CÁLCULO DE CUOTAS =============")
-                print(f"Cliente: {nombreCliente}")
+            for i in range(len(comprasFiadas)):
                 print(
-                    f"Valor total: "
-                    f"${valorCompraFiada:,}".replace(",", ".")
+                    f"{i + 1}. {comprasFiadas[i][0]} - "
+                    f"${comprasFiadas[i][1]:,}".replace(",", ".")
                 )
-                print(f"Cantidad de cuotas: {cantidadCuotas}")
-                print(
-                    f"Valor aproximado por cuota: "
-                    f"${valorCuota:,.0f}".replace(",", ".")
+
+            numeroCompra = int(
+                input("¿De qué compra quieres calcular las cuotas? ")
+            )
+
+            if numeroCompra >= 1 and numeroCompra <= len(comprasFiadas):
+
+                # Obtener la compra seleccionada
+                compraSeleccionada = comprasFiadas[numeroCompra - 1]
+
+                valorCompraFiada = compraSeleccionada[1]
+                nombreCliente = compraSeleccionada[0]
+
+                cantidadCuotas = int(
+                    input("¿En cuántas cuotas pagará el cliente? ")
                 )
+
+                if cantidadCuotas > 0:
+
+                    valorCuota = valorCompraFiada / cantidadCuotas
+
+                    print()
+                    print("============= CÁLCULO DE CUOTAS =============")
+                    print(f"Cliente: {nombreCliente}")
+                    print(
+                        f"Valor total: "
+                        f"${valorCompraFiada:,}".replace(",", ".")
+                    )
+                    print(f"Cantidad de cuotas: {cantidadCuotas}")
+                    print(
+                        f"Valor aproximado por cuota: "
+                        f"${valorCuota:,.0f}".replace(",", ".")
+                    )
+                    print("=============================================")
+
+                else:
+                    print("Error: las cuotas deben ser mayores que cero.")
 
             else:
-                print("Error: la cantidad de cuotas debe ser mayor que cero.")
+                print("Número de compra no válido.")
 
         else:
             print("Primero debes registrar una compra fiada.")
 
-    # Opción 4: Salir
     elif opcion == "4":
 
         print()
